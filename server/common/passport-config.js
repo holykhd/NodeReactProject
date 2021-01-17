@@ -1,18 +1,19 @@
 const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
+const commonMessage = require('./common-message');
 
 function initialize(passport, getUserByEmail, getUserById) {
     const authenticateUser = async (email, password, done) => {
         const user = getUserByEmail(email)
         if (user == null) {
-            return done(null, false, { message: '회원 정보가 존재하지 않습니다.' })
+            return done(null, false, { message: commonMessage.noUser})
         }
 
         try {
             if (await bcrypt.compare(password, user.password)) {
                 return done(null, user)
             } else {
-                return done(null, false, { message: '비밀번호가 올바르지 않습니다.' })
+                return done(null, false, { message: commonMessage.differentPassword })
             }
         } catch (e) {
             return done(e)

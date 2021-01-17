@@ -32,8 +32,10 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
-// initializePassport(passport,email => users.find(user => user.email === email));
 
+app.get('/api/hello', (req, res) => {
+    res.send('안녕하세요~~~~~')
+})
 
 // 첫페이지
 app.get('/', auth.checkAuthenticated, (req, res) => {
