@@ -1,1 +1,44 @@
-Register
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+</head>
+<style>
+    .form-area{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    form input{
+        margin: 10px;
+        padding: 10px 15px;
+        border:1px solid #ccc;
+    }
+</style>
+<body>
+    <div class="form-area">
+        <h1>Register Page</h1>
+        <form action="/register" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="Register">
+        </form>
+        <a href="/login">Login</a>
+    </div>
+
+</body>
+</html>
