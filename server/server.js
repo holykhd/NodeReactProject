@@ -36,10 +36,14 @@ app.use(methodOverride('_method'))
 app.get('/api/hello', (req, res) => {
     res.send('안녕하세요~~~~~')
 })
-
+app.get('/api/main', (req, res) => {
+    // res.render('index.ejs', {name: req.user.name})
+    res.send('This is Main Page')
+})
 // 첫페이지
 app.get('/', auth.checkAuthenticated, (req, res) => {
-    res.render('index.ejs', {name: req.user.name})
+    // res.render('index.ejs', {name: req.user.name})
+    res.send('This is Main Page')
 })
 
 // 로그인 페이지

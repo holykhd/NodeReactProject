@@ -4,13 +4,15 @@
   "description": "Node and React toy Project",
   "main": "server/server.js",
   "scripts": {
-    "devStart": "nodemon server/server.js"
+    "devStart": "nodemon server/server.js",
+    "dev": "concurrently \"npm run devStart\" \"npm run start --prefix client\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
     "cookie-parser": "^1.4.5",
     "dayjs": "^1.10.3",
     "ejs": "^3.1.5",
