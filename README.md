@@ -2,4 +2,10 @@
  - client : npm create-react-app client(폴더명)
  - server : npm express
 
-## Node Server Start
+## 1. 기본 세팅
+ - package.json : 
+   "scripts": {
+        "devStart" : "nodemon server.js"
+   },
+   => npm run devStart
+ - .env파일 추가
